@@ -8,192 +8,192 @@ function App() {
   const weekData = [
     {
       name: 'Saturday',
-      uv: 590,
-      pv: 800,
+      Income: 590,
+      Expenses: 800,
       amt: 1400,
     },
     {
       name: 'Sunday',
-      uv: 868,
-      pv: 967,
+      Income: 868,
+      Expenses: 967,
       amt: 1506,
     },
     {
       name: 'Monday',
-      uv: 2000,
-      pv: 9800,
+      Income: 2000,
+      Expenses: 9800,
       amt: 2290,
     },
     {
       name: 'Tuesday',
-      uv: 2780,
-      pv: 3908,
+      Income: 2780,
+      Expenses: 3908,
       amt: 2000,
     },
     {
       name: 'Wednesday',
-      uv: 1890,
-      pv: 4800,
+      Income: 1890,
+      Expenses: 4800,
       amt: 2181,
     },
     {
       name: 'Thursday',
-      uv: 2390,
-      pv: 3800,
+      Income: 2390,
+      Expenses: 3800,
       amt: 2500,
     },
     {
       name: 'Friday',
-      uv: 3490,
-      pv: 4300,
+      Income: 3490,
+      Expenses: 4300,
       amt: 2100,
     },
   ];
   const monthData = [
     {
       name: 'January',
-      uv: 590,
-      pv: 800,
+      Income: 590,
+      Expenses: 800,
       amt: 1400,
     },
     {
       name: 'February',
-      uv: 868,
-      pv: 967,
+      Income: 868,
+      Expenses: 967,
       amt: 1506,
     },
     {
       name: 'March',
-      uv: 2000,
-      pv: 9800,
+      Income: 2000,
+      Expenses: 9800,
       amt: 2290,
     },
     {
       name: 'April',
-      uv: 2780,
-      pv: 3908,
+      Income: 2780,
+      Expenses: 3908,
       amt: 2000,
     },
     {
       name: 'May',
-      uv: 1890,
-      pv: 4800,
+      Income: 1890,
+      Expenses: 4800,
       amt: 2181,
     },
     {
       name: 'June',
-      uv: 2390,
-      pv: 3800,
+      Income: 2390,
+      Expenses: 3800,
       amt: 2500,
     },
     {
       name: 'July',
-      uv: 3490,
-      pv: 4300,
+      Income: 3490,
+      Expenses: 4300,
       amt: 2100,
     },
     {
       name: 'August',
-      uv: 2000,
-      pv: 9800,
+      Income: 2000,
+      Expenses: 9800,
       amt: 2290,
     },
     {
       name: 'September',
-      uv: 2780,
-      pv: 3908,
+      Income: 2780,
+      Expenses: 3908,
       amt: 2000,
     },
     {
       name: 'October',
-      uv: 1890,
-      pv: 4800,
+      Income: 1890,
+      Expenses: 4800,
       amt: 2181,
     },
     {
       name: 'November',
-      uv: 2390,
-      pv: 3800,
+      Income: 2390,
+      Expenses: 3800,
       amt: 2500,
     },
     {
       name: 'December',
-      uv: 3490,
-      pv: 4300,
+      Income: 3490,
+      Expenses: 4300,
       amt: 2100,
     },
   ];
   const yearData = [
     {
       name: 2011,
-      uv: 590,
-      pv: 800,
+      Income: 590,
+      Expenses: 800,
       amt: 1400,
     },
     {
       name: 2012,
-      uv: 868,
-      pv: 967,
+      Income: 868,
+      Expenses: 967,
       amt: 1506,
     },
     {
       name: 2013,
-      uv: 2000,
-      pv: 9800,
+      Income: 2000,
+      Expenses: 9800,
       amt: 2290,
     },
     {
       name: 2014,
-      uv: 2780,
-      pv: 3908,
+      Income: 2780,
+      Expenses: 3908,
       amt: 2000,
     },
     {
       name: 2015,
-      uv: 1890,
-      pv: 4800,
+      Income: 1890,
+      Expenses: 4800,
       amt: 2181,
     },
     {
       name: 2016,
-      uv: 2390,
-      pv: 3800,
+      Income: 2390,
+      Expenses: 3800,
       amt: 2500,
     },
     {
       name: 2017,
-      uv: 3490,
-      pv: 4300,
+      Income: 3490,
+      Expenses: 4300,
       amt: 2100,
     },
     {
       name: 2018,
-      uv: 2000,
-      pv: 9800,
+      Income: 2000,
+      Expenses: 9800,
       amt: 2290,
     },
     {
       name: 2019,
-      uv: 2780,
-      pv: 3908,
+      Income: 2780,
+      Expenses: 3908,
       amt: 2000,
     },
     {
       name: 2020,
-      uv: 1890,
-      pv: 4800,
+      Income: 1890,
+      Expenses: 4800,
       amt: 2181,
     },
     {
       name: 2021,
-      uv: 2390,
-      pv: 3800,
+      Income: 2390,
+      Expenses: 3800,
       amt: 2500,
     },
     {
       name: 2022,
-      uv: 3490,
-      pv: 4300,
+      Income: 3490,
+      Expenses: 4300,
       amt: 2100,
     },
   ];
@@ -230,8 +230,8 @@ function App() {
                 <YAxis />
                 <Tooltip />
                 <Legend iconType="circle" verticalAlign="top" height={36} />
-                <Bar dataKey="pv" fill="#394dff" />
-                <Bar dataKey="uv" fill="#57d3dd" />
+                <Bar dataKey="Expenses" fill="#394dff" />
+                <Bar dataKey="Income" fill="#57d3dd" />
               </BarChart>
             </ResponsiveContainer>) ||
               (trackCharts === 'month' && <ResponsiveContainer width="100%" height="100%">
@@ -251,8 +251,8 @@ function App() {
                   <YAxis />
                   <Tooltip />
                   <Legend iconType="circle" verticalAlign="top" height={36} />
-                  <Bar dataKey="pv" fill="#394dff" />
-                  <Bar dataKey="uv" fill="#57d3dd" />
+                  <Bar dataKey="Expenses" fill="#394dff" />
+                  <Bar dataKey="Income" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>) ||
               (trackCharts === 'year' && <ResponsiveContainer width="100%" height="100%">
@@ -272,8 +272,8 @@ function App() {
                   <YAxis />
                   <Tooltip />
                   <Legend iconType="circle" verticalAlign="top" height={36} />
-                  <Bar dataKey="pv" fill="#394dff" />
-                  <Bar dataKey="uv" fill="#57d3dd" />
+                  <Bar dataKey="Expenses" fill="#394dff" />
+                  <Bar dataKey="Income" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>)) :
             <ResponsiveContainer width="100%" height="100%">
@@ -293,8 +293,8 @@ function App() {
                 <YAxis />
                 <Tooltip />
                 <Legend iconType="circle" verticalAlign="top" height={36} />
-                <Bar dataKey="pv" fill="#394dff" />
-                <Bar dataKey="uv" fill="#57d3dd" />
+                <Bar dataKey="Expenses" fill="#394dff" />
+                <Bar dataKey="Income" fill="#57d3dd" />
               </BarChart>
             </ResponsiveContainer>
         }
