@@ -1,44 +1,74 @@
 [
     {
-        "name": "Saturday",
-        "uv": 4000,
-        "pv": 2400,
-        "amt": 2400
+        "name": "January",
+        "Income": 590,
+        "Expenses": 800,
+        "other": 1400
     },
     {
-        "name": "Sunday",
-        "uv": 3000,
-        "pv": 1398,
-        "amt": 2210
+        "name": "February",
+        "Income": 868,
+        "Expenses": 967,
+        "other": 1506
     },
     {
-        "name": "Monday",
-        "uv": 2000,
-        "pv": 9800,
-        "amt": 2290
+        "name": "March",
+        "Income": 2000,
+        "Expenses": 9800,
+        "other": 2290
     },
     {
-        "name": "Tuesday",
-        "uv": 2780,
-        "pv": 3908,
-        "amt": 2000
+        "name": "April",
+        "Income": 2780,
+        "Expenses": 3908,
+        "other": 2000
     },
     {
-        "name": "Wednesday",
-        "uv": 1890,
-        "pv": 4800,
-        "amt": 2181
+        "name": "May",
+        "Income": 1890,
+        "Expenses": 4800,
+        "other": 2181
     },
     {
-        "name": "Thirsday",
-        "uv": 2390,
-        "pv": 3800,
-        "amt": 2500
+        "name": "June",
+        "Income": 2390,
+        "Expenses": 3800,
+        "other": 2500
     },
     {
-        "name": "Friday",
-        "uv": 2390,
-        "pv": 3800,
-        "amt": 2500
+        "name": "July",
+        "Income": 3490,
+        "Expenses": 4300,
+        "other": 2100
+    },
+    {
+        "name": "August",
+        "Income": 2000,
+        "Expenses": 9800,
+        "other": 2290
+    },
+    {
+        "name": "September",
+        "Income": 2780,
+        "Expenses": 3908,
+        "other": 2000
+    },
+    {
+        "name": "October",
+        "Income": 1890,
+        "Expenses": 4800,
+        "other": 2181
+    },
+    {
+        "name": "November",
+        "Income": 2390,
+        "Expenses": 3800,
+        "other": 2500
+    },
+    {
+        "name": "December",
+        "Income": 3490,
+        "Expenses": 4300,
+        "other": 2100
     }
 ]
