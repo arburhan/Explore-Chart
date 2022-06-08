@@ -229,7 +229,7 @@ function App() {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Legend verticalAlign="top" height={36} />
+                <Legend iconType="circle" verticalAlign="top" height={36} />
                 <Bar dataKey="pv" fill="#394dff" />
                 <Bar dataKey="uv" fill="#57d3dd" />
               </BarChart>
@@ -250,7 +250,7 @@ function App() {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
-                  <Legend verticalAlign="top" height={36} />
+                  <Legend iconType="circle" verticalAlign="top" height={36} />
                   <Bar dataKey="pv" fill="#394dff" />
                   <Bar dataKey="uv" fill="#57d3dd" />
                 </BarChart>
@@ -271,7 +271,7 @@ function App() {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
-                  <Legend verticalAlign="top" height={36} />
+                  <Legend iconType="circle" verticalAlign="top" height={36} />
                   <Bar dataKey="pv" fill="#394dff" />
                   <Bar dataKey="uv" fill="#57d3dd" />
                 </BarChart>
@@ -292,7 +292,7 @@ function App() {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Legend verticalAlign="top" height={36} />
+                <Legend iconType="circle" verticalAlign="top" height={36} />
                 <Bar dataKey="pv" fill="#394dff" />
                 <Bar dataKey="uv" fill="#57d3dd" />
               </BarChart>
