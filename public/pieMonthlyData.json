@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Shopping",
+        "value": 700
+    },
+    {
+        "name": "Home",
+        "value": 1300
+    },
+    {
+        "name": "Other",
+        "value": 300
+    }
+]

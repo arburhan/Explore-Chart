@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
+import { useQuery } from 'react-query';
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 
 const ChartPie = () => {
     const [trackCharts, setTrackCharts] = useState('');
-    const weekData = [
-        { name: 'Shopping', value: 400 },
-        { name: 'Home', value: 300 },
-        { name: 'Other', value: 300 },
-    ];
-    const monthData = [
-        { name: 'Shopping', value: 1200 },
-        { name: 'Home', value: 1100 },
-        { name: 'Other', value: 500 },
-    ];
-    const yearData = [
-        { name: 'Shopping', value: 36000 },
-        { name: 'Home', value: 38000 },
-        { name: 'Other', value: 5000 },
-    ];
+    // pieWeeklyData.json
+    // pieMonthlyData.json
+    // pieYearlyData.json
+    // week data
+    const { data: weekData, isLoading: weekLoading } = useQuery(['weekDataPie'], () => fetch(`pieWeeklyData.json`)
+        .then(res => res.json()));
+
+    // monthly data
+    const { data: monthData, isLoading: monthLoading } = useQuery(['monthDataPie'], () => fetch(`pieMonthlyData.json`)
+        .then(res => res.json()));
+
+    // monthly data
+    const { data: yearData, isLoading: yearLoading } = useQuery(['yearDataPie'], () => fetch(`pieYearlyData.json`)
+        .then(res => res.json()));
+
+    // loading system 
+    if (weekLoading || monthLoading || yearLoading) {
+        return <p>Loading ...</p>
+    }
+
     const COLORS = ['#394dff', '#57d3dd', '#f75555'];
     // function
     const trackChart = (e) => {
