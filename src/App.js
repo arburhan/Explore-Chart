@@ -205,40 +205,21 @@ function App() {
 
   return (
     <div className="App">
-      <select onChange={trackChart} className="select select-bordered w-md max-w-xs my-3">
-        <option value='week' selected>Weekly</option>
-        <option value='month' >Monthly</option>
-        <option value='year' >Yearly</option>
-      </select>
-      <div style={{ width: '100%', height: 300 }}>
-        {
-          trackCharts ?
-            ((trackCharts === 'week' && <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                width={500}
-                height={300}
-                data={weekData}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend iconType="circle" verticalAlign="top" height={36} />
-                <Bar dataKey="Expenses" fill="#394dff" />
-                <Bar dataKey="Income" fill="#57d3dd" />
-              </BarChart>
-            </ResponsiveContainer>) ||
-              (trackCharts === 'month' && <ResponsiveContainer width="100%" height="100%">
+      {/* bar chart */}
+      <div>
+        <select onChange={trackChart} className="select select-bordered w-md max-w-xs my-3">
+          <option value='week' selected>Weekly</option>
+          <option value='month' >Monthly</option>
+          <option value='year' >Yearly</option>
+        </select>
+        <div style={{ width: '100%', height: 300 }}>
+          {
+            trackCharts ?
+              ((trackCharts === 'week' && <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   width={500}
                   height={300}
-                  data={monthData}
+                  data={weekData}
                   margin={{
                     top: 5,
                     right: 30,
@@ -255,11 +236,53 @@ function App() {
                   <Bar dataKey="Income" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>) ||
-              (trackCharts === 'year' && <ResponsiveContainer width="100%" height="100%">
+                (trackCharts === 'month' && <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    width={500}
+                    height={300}
+                    data={monthData}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend iconType="circle" verticalAlign="top" height={36} />
+                    <Bar dataKey="Expenses" fill="#394dff" />
+                    <Bar dataKey="Income" fill="#57d3dd" />
+                  </BarChart>
+                </ResponsiveContainer>) ||
+                (trackCharts === 'year' && <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    width={500}
+                    height={300}
+                    data={yearData}
+                    margin={{
+                      top: 5,
+                      right: 30,
+                      left: 20,
+                      bottom: 5,
+                    }}
+                  >
+
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend iconType="circle" verticalAlign="top" height={36} />
+                    <Bar dataKey="Expenses" fill="#394dff" />
+                    <Bar dataKey="Income" fill="#57d3dd" />
+                  </BarChart>
+                </ResponsiveContainer>)) :
+              <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   width={500}
                   height={300}
-                  data={yearData}
+                  data={weekData}
                   margin={{
                     top: 5,
                     right: 30,
@@ -275,31 +298,18 @@ function App() {
                   <Bar dataKey="Expenses" fill="#394dff" />
                   <Bar dataKey="Income" fill="#57d3dd" />
                 </BarChart>
-              </ResponsiveContainer>)) :
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                width={500}
-                height={300}
-                data={weekData}
-                margin={{
-                  top: 5,
-                  right: 30,
-                  left: 20,
-                  bottom: 5,
-                }}
-              >
-
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend iconType="circle" verticalAlign="top" height={36} />
-                <Bar dataKey="Expenses" fill="#394dff" />
-                <Bar dataKey="Income" fill="#57d3dd" />
-              </BarChart>
-            </ResponsiveContainer>
-        }
+              </ResponsiveContainer>
+          }
+        </div>
       </div>
+      {/* pie chart */}
+      <div>
 
+      </div>
+      {/* gradiant */}
+      <div>
+
+      </div>
     </div>
   );
 }
