@@ -205,7 +205,7 @@ function App() {
 
   return (
     <div className="App">
-      <select onChange={trackChart} className="select select-bordered w-md max-w-xs">
+      <select onChange={trackChart} className="select select-bordered w-md max-w-xs my-3">
         <option value='week' selected>Weekly</option>
         <option value='month' >Monthly</option>
         <option value='year' >Yearly</option>
@@ -229,7 +229,7 @@ function App() {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Legend />
+                <Legend verticalAlign="top" height={36} />
                 <Bar dataKey="pv" fill="#8884d8" />
                 <Bar dataKey="uv" fill="#82ca9d" />
               </BarChart>
@@ -250,7 +250,7 @@ function App() {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
-                  <Legend />
+                  <Legend verticalAlign="top" height={36} />
                   <Bar dataKey="pv" fill="#8884d8" />
                   <Bar dataKey="uv" fill="#82ca9d" />
                 </BarChart>
@@ -271,7 +271,7 @@ function App() {
                   <XAxis dataKey="name" />
                   <YAxis />
                   <Tooltip />
-                  <Legend />
+                  <Legend verticalAlign="top" height={36} />
                   <Bar dataKey="pv" fill="#8884d8" />
                   <Bar dataKey="uv" fill="#82ca9d" />
                 </BarChart>
@@ -292,7 +292,7 @@ function App() {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Legend />
+                <Legend verticalAlign="top" height={36} />
                 <Bar dataKey="pv" fill="#8884d8" />
                 <Bar dataKey="uv" fill="#82ca9d" />
               </BarChart>
