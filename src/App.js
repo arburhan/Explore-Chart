@@ -230,8 +230,8 @@ function App() {
                 <YAxis />
                 <Tooltip />
                 <Legend verticalAlign="top" height={36} />
-                <Bar dataKey="pv" fill="#8884d8" />
-                <Bar dataKey="uv" fill="#82ca9d" />
+                <Bar dataKey="pv" fill="#394dff" />
+                <Bar dataKey="uv" fill="#57d3dd" />
               </BarChart>
             </ResponsiveContainer>) ||
               (trackCharts === 'month' && <ResponsiveContainer width="100%" height="100%">
@@ -251,8 +251,8 @@ function App() {
                   <YAxis />
                   <Tooltip />
                   <Legend verticalAlign="top" height={36} />
-                  <Bar dataKey="pv" fill="#8884d8" />
-                  <Bar dataKey="uv" fill="#82ca9d" />
+                  <Bar dataKey="pv" fill="#394dff" />
+                  <Bar dataKey="uv" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>) ||
               (trackCharts === 'year' && <ResponsiveContainer width="100%" height="100%">
@@ -272,8 +272,8 @@ function App() {
                   <YAxis />
                   <Tooltip />
                   <Legend verticalAlign="top" height={36} />
-                  <Bar dataKey="pv" fill="#8884d8" />
-                  <Bar dataKey="uv" fill="#82ca9d" />
+                  <Bar dataKey="pv" fill="#394dff" />
+                  <Bar dataKey="uv" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>)) :
             <ResponsiveContainer width="100%" height="100%">
@@ -293,8 +293,8 @@ function App() {
                 <YAxis />
                 <Tooltip />
                 <Legend verticalAlign="top" height={36} />
-                <Bar dataKey="pv" fill="#8884d8" />
-                <Bar dataKey="uv" fill="#82ca9d" />
+                <Bar dataKey="pv" fill="#394dff" />
+                <Bar dataKey="uv" fill="#57d3dd" />
               </BarChart>
             </ResponsiveContainer>
         }
