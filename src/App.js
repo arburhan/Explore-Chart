@@ -3,6 +3,7 @@ import { Area, Bar, BarChart, CartesianGrid, ComposedChart, Legend, Line, Respon
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import ChartPie from './Components/ChartPie';
+import ChartArea from './Components/ChartArea';
 
 function App() {
   const [dataState, setDataState] = useState([]);
@@ -134,7 +135,7 @@ function App() {
       </div>
       {/* gradiant */}
       <div>
-
+        <ChartArea></ChartArea>
       </div>
     </div>
   );

@@ -4,10 +4,6 @@ import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recha
 
 const ChartPie = () => {
     const [trackCharts, setTrackCharts] = useState('');
-    // pieWeeklyData.json
-    // pieMonthlyData.json
-    // pieYearlyData.json
-    // week data
     const { data: weekData, isLoading: weekLoading } = useQuery(['weekDataPie'], () => fetch(`pieWeeklyData.json`)
         .then(res => res.json()));
 
