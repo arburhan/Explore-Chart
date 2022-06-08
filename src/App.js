@@ -2,6 +2,7 @@ import './App.css';
 import { Area, Bar, BarChart, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
+import ChartPie from './Components/ChartPie';
 
 function App() {
   const [dataState, setDataState] = useState([]);
@@ -129,7 +130,7 @@ function App() {
       </div>
       {/* pie chart */}
       <div>
-
+        <ChartPie></ChartPie>
       </div>
       {/* gradiant */}
       <div>
