@@ -1,77 +1,305 @@
-import logo from './logo.svg';
 import './App.css';
-import { Area, Bar, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Area, Bar, BarChart, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { useState } from 'react';
 
 function App() {
-  const data = [
+  const [dataState, setDataState] = useState([]);
+
+  const weekData = [
     {
-      name: 'Page A',
+      name: 'Saturday',
       uv: 590,
       pv: 800,
       amt: 1400,
     },
     {
-      name: 'Page B',
+      name: 'Sunday',
       uv: 868,
       pv: 967,
       amt: 1506,
     },
     {
-      name: 'Page C',
-      uv: 1397,
-      pv: 1098,
-      amt: 989,
+      name: 'Monday',
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
     },
     {
-      name: 'Page D',
-      uv: 1480,
-      pv: 1200,
-      amt: 1228,
+      name: 'Tuesday',
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
     },
     {
-      name: 'Page E',
-      uv: 1520,
-      pv: 1108,
-      amt: 1100,
+      name: 'Wednesday',
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
     },
     {
-      name: 'Page F',
-      uv: 1400,
-      pv: 680,
-      amt: 1700,
+      name: 'Thursday',
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: 'Friday',
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
     },
   ];
+  const monthData = [
+    {
+      name: 'January',
+      uv: 590,
+      pv: 800,
+      amt: 1400,
+    },
+    {
+      name: 'February',
+      uv: 868,
+      pv: 967,
+      amt: 1506,
+    },
+    {
+      name: 'March',
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: 'April',
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: 'May',
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: 'June',
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: 'July',
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+    {
+      name: 'August',
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: 'September',
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: 'October',
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: 'November',
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: 'December',
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+  ];
+  const yearData = [
+    {
+      name: 2011,
+      uv: 590,
+      pv: 800,
+      amt: 1400,
+    },
+    {
+      name: 2012,
+      uv: 868,
+      pv: 967,
+      amt: 1506,
+    },
+    {
+      name: 2013,
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: 2014,
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: 2015,
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: 2016,
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: 2017,
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+    {
+      name: 2018,
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: 2019,
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: 2020,
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: 2021,
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: 2022,
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+  ];
+  const [trackCharts, setTrackCharts] = useState('');
+  console.log(trackCharts)
+  const trackChart = (e) => {
+    setTrackCharts(e.target.value);
+  }
+
   return (
     <div className="App">
-      <select className="select select-bordered w-md max-w-xs">
-        <option selected>Weekly</option>
-        <option>Monthly</option>
-        <option>Yearly</option>
+      <select onChange={trackChart} className="select select-bordered w-md max-w-xs">
+        <option value='week' selected>Weekly</option>
+        <option value='month' >Monthly</option>
+        <option value='year' >Yearly</option>
       </select>
       <div style={{ width: '100%', height: 300 }}>
-        <ResponsiveContainer>
-          <ComposedChart
-            width={500}
-            height={400}
-            data={data}
-            margin={{
-              top: 20,
-              right: 20,
-              bottom: 20,
-              left: 20,
-            }}
-          >
-            <CartesianGrid stroke="#f5f5f5" />
-            <XAxis dataKey="name" scale="band" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
-            <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-            <Line type="monotone" dataKey="uv" stroke="#ff7300" />
-          </ComposedChart>
-        </ResponsiveContainer>
+        {
+          trackCharts ?
+            ((trackCharts === 'week' && <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                width={500}
+                height={300}
+                data={weekData}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+              >
+
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="pv" fill="#8884d8" />
+                <Bar dataKey="uv" fill="#82ca9d" />
+              </BarChart>
+            </ResponsiveContainer>) ||
+              (trackCharts === 'month' && <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  width={500}
+                  height={300}
+                  data={monthData}
+                  margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                >
+
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  <Bar dataKey="pv" fill="#8884d8" />
+                  <Bar dataKey="uv" fill="#82ca9d" />
+                </BarChart>
+              </ResponsiveContainer>) ||
+              (trackCharts === 'year' && <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  width={500}
+                  height={300}
+                  data={yearData}
+                  margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                >
+
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  <Bar dataKey="pv" fill="#8884d8" />
+                  <Bar dataKey="uv" fill="#82ca9d" />
+                </BarChart>
+              </ResponsiveContainer>)) :
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                width={500}
+                height={300}
+                data={weekData}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+              >
+
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="pv" fill="#8884d8" />
+                <Bar dataKey="uv" fill="#82ca9d" />
+              </BarChart>
+            </ResponsiveContainer>
+        }
       </div>
+
     </div>
   );
 }
