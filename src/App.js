@@ -9,15 +9,15 @@ function App() {
   const [trackCharts, setTrackCharts] = useState('');
 
   // week data
-  const { data: weekData, isLoading: weekLoading } = useQuery(['weekData'], () => fetch(`Weekly.json`)
+  const { data: weekData, isLoading: weekLoading } = useQuery(['weekData'], () => fetch(`barWeeklyData.json`)
     .then(res => res.json()));
 
   // monthly data
-  const { data: monthData, isLoading: monthLoading } = useQuery(['monthData'], () => fetch(`Monthly.json`)
+  const { data: monthData, isLoading: monthLoading } = useQuery(['monthData'], () => fetch(`barMonthlyData.json`)
     .then(res => res.json()));
 
   // monthly data
-  const { data: yearData, isLoading: yearLoading } = useQuery(['yearData'], () => fetch(`Yearly.json`)
+  const { data: yearData, isLoading: yearLoading } = useQuery(['yearData'], () => fetch(`barYearlyData.json`)
     .then(res => res.json()));
 
   // loading system 
