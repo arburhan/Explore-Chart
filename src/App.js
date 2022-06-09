@@ -1,12 +1,11 @@
 import './App.css';
-import { Area, Bar, BarChart, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { useState } from 'react';
 import { useQuery } from 'react-query';
 import ChartPie from './Components/ChartPie';
 import ChartArea from './Components/ChartArea';
 
 function App() {
-  const [dataState, setDataState] = useState([]);
   const [trackCharts, setTrackCharts] = useState('');
 
   // week data
@@ -59,8 +58,8 @@ function App() {
                   <YAxis />
                   <Tooltip />
                   <Legend iconType="circle" verticalAlign="top" height={36} />
-                  <Bar dataKey="Expenses" fill="#394dff" />
-                  <Bar dataKey="Income" fill="#57d3dd" />
+                  <Bar radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
+                  <Bar radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>) ||
                 (trackCharts === 'month' && <ResponsiveContainer width="100%" height="100%">
@@ -80,8 +79,8 @@ function App() {
                     <YAxis />
                     <Tooltip />
                     <Legend iconType="circle" verticalAlign="top" height={36} />
-                    <Bar dataKey="Expenses" fill="#394dff" />
-                    <Bar dataKey="Income" fill="#57d3dd" />
+                    <Bar radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
+                    <Bar radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
                   </BarChart>
                 </ResponsiveContainer>) ||
                 (trackCharts === 'year' && <ResponsiveContainer width="100%" height="100%">
@@ -101,8 +100,8 @@ function App() {
                     <YAxis />
                     <Tooltip />
                     <Legend iconType="circle" verticalAlign="top" height={36} />
-                    <Bar dataKey="Expenses" fill="#394dff" />
-                    <Bar dataKey="Income" fill="#57d3dd" />
+                    <Bar radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
+                    <Bar radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
                   </BarChart>
                 </ResponsiveContainer>)) :
               <ResponsiveContainer width="100%" height="100%">
@@ -122,19 +121,19 @@ function App() {
                   <YAxis />
                   <Tooltip />
                   <Legend iconType="circle" verticalAlign="top" height={36} />
-                  <Bar dataKey="Expenses" fill="#394dff" />
-                  <Bar dataKey="Income" fill="#57d3dd" />
+                  <Bar radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
+                  <Bar radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>
           }
         </div>
       </div>
       {/* pie chart */}
-      <div>
+      <div className='my-4'>
         <ChartPie></ChartPie>
       </div>
       {/* gradiant */}
-      <div>
+      <div className='my-4'>
         <ChartArea></ChartArea>
       </div>
     </div>

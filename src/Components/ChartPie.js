@@ -6,6 +6,7 @@ const ChartPie = () => {
     const [trackCharts, setTrackCharts] = useState('');
     const { data: weekData, isLoading: weekLoading } = useQuery(['weekDataPie'], () => fetch(`pieWeeklyData.json`)
         .then(res => res.json()));
+    console.log(weekData)
 
     // monthly data
     const { data: monthData, isLoading: monthLoading } = useQuery(['monthDataPie'], () => fetch(`pieMonthlyData.json`)
@@ -51,6 +52,7 @@ const ChartPie = () => {
                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
                         </Pie>
+                        <Legend label={weekData} iconType="circle" horizontalAlign="right" height={36} />
                     </PieChart>
                 </ResponsiveContainer>) || (trackCharts === 'month' && <ResponsiveContainer>
                     <PieChart width={800} height={400}>
@@ -68,6 +70,7 @@ const ChartPie = () => {
                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
                         </Pie>
+                        <Legend iconType="circle" horizontalAlign="right" height={36} />
                     </PieChart>
                 </ResponsiveContainer>) || (trackCharts === 'year' && <ResponsiveContainer>
                     <PieChart width={800} height={400}>
@@ -85,12 +88,13 @@ const ChartPie = () => {
                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
                         </Pie>
+                        <Legend iconType="circle" horizontalAlign="right" height={36} />
                     </PieChart>
                 </ResponsiveContainer>)) :
                     <ResponsiveContainer>
                         <PieChart width={800} height={400}>
                             <Pie
-                                data={yearData}
+                                data={weekData}
                                 cx={120}
                                 cy={200}
                                 innerRadius={60}
@@ -103,6 +107,8 @@ const ChartPie = () => {
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                 ))}
                             </Pie>
+                            <Legend iconType="circle" horizontalAlign="right" height={36} />
+
                         </PieChart>
                     </ResponsiveContainer>}
             </div>
