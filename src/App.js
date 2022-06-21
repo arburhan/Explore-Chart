@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 import ChartPie from './Components/ChartPie';
 import ChartArea from './Components/ChartArea';
+import CustomTooltip from './Components/CustomTooltip';
 
 function App() {
   const [trackCharts, setTrackCharts] = useState('');
+  let [barGraphData, setBarGraphData] = useState({})
 
   // week data
   const { data: weekData, isLoading: weekLoading } = useQuery(['weekData'], () => fetch(`barWeeklyData.json`)
@@ -56,10 +58,20 @@ function App() {
 
                   <XAxis dataKey="name" />
                   <YAxis />
-                  <Tooltip />
+                  <Tooltip cursor={false} position={{ x: barGraphData.x }} contentStyle={{ backgroundColor: '#2d3748', color: 'white' }} />
                   <Legend iconType="circle" verticalAlign="top" height={36} />
-                  <Bar radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
-                  <Bar radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
+                  <Bar
+                    onMouseOver={(weekData) => {
+                      console.log('data', weekData)
+                      setBarGraphData(weekData)
+                    }}
+                    radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
+                  <Bar
+                    onMouseOver={(weekData) => {
+                      console.log('data', weekData)
+                      setBarGraphData(weekData)
+                    }}
+                    radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>) ||
                 (trackCharts === 'month' && <ResponsiveContainer width="100%" height="100%">
@@ -77,10 +89,20 @@ function App() {
 
                     <XAxis dataKey="name" />
                     <YAxis />
-                    <Tooltip />
+                    <Tooltip cursor={false} position={{ x: barGraphData.x }} contentStyle={{ backgroundColor: '#2d3748', color: 'white' }} />
                     <Legend iconType="circle" verticalAlign="top" height={36} />
-                    <Bar radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
-                    <Bar radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
+                    <Bar
+                      onMouseOver={(monthData) => {
+                        console.log('data', monthData)
+                        setBarGraphData(monthData)
+                      }}
+                      radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
+                    <Bar
+                      onMouseOver={(monthData) => {
+                        console.log('data', monthData)
+                        setBarGraphData(monthData)
+                      }}
+                      radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
                   </BarChart>
                 </ResponsiveContainer>) ||
                 (trackCharts === 'year' && <ResponsiveContainer width="100%" height="100%">
@@ -98,10 +120,20 @@ function App() {
 
                     <XAxis dataKey="name" />
                     <YAxis />
-                    <Tooltip />
+                    <Tooltip cursor={false} position={{ x: barGraphData.x }} contentStyle={{ backgroundColor: '#2d3748', color: 'white' }} />
                     <Legend iconType="circle" verticalAlign="top" height={36} />
-                    <Bar radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
-                    <Bar radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
+                    <Bar
+                      onMouseOver={(yearData) => {
+                        console.log('data', yearData)
+                        setBarGraphData(yearData)
+                      }}
+                      radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
+                    <Bar
+                      onMouseOver={(yearData) => {
+                        console.log('data', yearData)
+                        setBarGraphData(yearData)
+                      }}
+                      radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
                   </BarChart>
                 </ResponsiveContainer>)) :
               <ResponsiveContainer width="100%" height="100%">
@@ -119,10 +151,20 @@ function App() {
 
                   <XAxis dataKey="name" />
                   <YAxis />
-                  <Tooltip />
+                  <Tooltip cursor={false} position={{ x: barGraphData.x }} contentStyle={{ backgroundColor: '#2d3748', color: 'white' }} />
                   <Legend iconType="circle" verticalAlign="top" height={36} />
-                  <Bar radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
-                  <Bar radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
+                  <Bar
+                    onMouseOver={(weekData) => {
+                      console.log('data', weekData)
+                      setBarGraphData(weekData)
+                    }}
+                    radius={[10, 10, 0, 0]} dataKey="Expenses" fill="#394dff" />
+                  <Bar
+                    onMouseOver={(weekData) => {
+                      console.log('data', weekData)
+                      setBarGraphData(weekData)
+                    }}
+                    radius={[10, 10, 0, 0]} dataKey="Income" fill="#57d3dd" />
                 </BarChart>
               </ResponsiveContainer>
           }

@@ -52,7 +52,7 @@ const ChartPie = () => {
                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
                         </Pie>
-                        <Legend label={weekData} iconType="circle" horizontalAlign="right" height={36} />
+                        <Legend label={weekData} iconType="circle" verticalAlign='top' horizontalAlign="right" height={15} />
                     </PieChart>
                 </ResponsiveContainer>) || (trackCharts === 'month' && <ResponsiveContainer>
                     <PieChart width={800} height={400}>
@@ -70,7 +70,7 @@ const ChartPie = () => {
                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
                         </Pie>
-                        <Legend iconType="circle" horizontalAlign="right" height={36} />
+                        <Legend label={weekData} iconType="circle" verticalAlign='top' horizontalAlign="right" height={15} />
                     </PieChart>
                 </ResponsiveContainer>) || (trackCharts === 'year' && <ResponsiveContainer>
                     <PieChart width={800} height={400}>
@@ -88,7 +88,7 @@ const ChartPie = () => {
                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
                         </Pie>
-                        <Legend iconType="circle" horizontalAlign="right" height={36} />
+                        <Legend label={weekData} iconType="circle" verticalAlign='top' horizontalAlign="right" height={15} />
                     </PieChart>
                 </ResponsiveContainer>)) :
                     <ResponsiveContainer>
@@ -107,7 +107,7 @@ const ChartPie = () => {
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                 ))}
                             </Pie>
-                            <Legend iconType="circle" horizontalAlign="right" height={36} />
+                            <Legend label={weekData} iconType="circle" verticalAlign='top' horizontalAlign="right" height={15} />
 
                         </PieChart>
                     </ResponsiveContainer>}
